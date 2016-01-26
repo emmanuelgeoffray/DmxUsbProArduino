@@ -12,3 +12,16 @@ This has been sucessfully tested with the following software: [ofxDmx](https://g
 
 The implementation lacks some checking for bad packets for now. You're welcome to help!
 
+
+# Installation
+
+```
+sudo apt-get install arduino-mk
+git clone https://github.com/TinkerKit/DmxMaster
+sudo cp -r DmxMaster /usr/share/arduino/libraries/
+git clone git@github.com:emmanuelgeoffray/DmxUsbProArduino.git
+cd DmxUsbProArduino
+make
+make upload
+```
+

@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ==============================================================================*/
 
-#include <DmxSimple.h>
+#include <DmxMaster.h>
 
 #define DMX_PRO_HEADER_SIZE 4
 #define DMX_PRO_START_MSG 0x7E
@@ -39,7 +39,7 @@ unsigned int channel;
 void setup() {
   Serial.begin(57600);
   // change the TX pin according to the DMX shield you're using
-  DmxSimple.usePin(2);
+  DmxMaster.usePin(2);
   state = DMX_PRO_END_MSG;
 }
 
@@ -68,7 +68,7 @@ void loop() {
     channel=1;
   }
   else if ( state == DMX_START_CODE && channel < dataSize){
-    DmxSimple.write(channel, c);
+    DmxMaster.write(channel, c);
     channel++;
   }
   else if ( state == DMX_START_CODE && channel == dataSize && c == DMX_PRO_END_MSG){
