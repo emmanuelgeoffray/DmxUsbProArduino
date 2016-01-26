@@ -17,6 +17,13 @@ The implementation lacks some checking for bad packets for now. You're welcome t
 
 ```
 sudo apt-get install arduino-mk
+sudo usermod -aG dialout $(whoami)
+```
+
+Restart your session for the changes on groups to take effect.
+Or `su - $USER`
+
+```
 git clone https://github.com/TinkerKit/DmxMaster
 sudo cp -r DmxMaster /usr/share/arduino/libraries/
 git clone git@github.com:emmanuelgeoffray/DmxUsbProArduino.git
